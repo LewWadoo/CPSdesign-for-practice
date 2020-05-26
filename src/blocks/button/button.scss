@@ -1,0 +1,37 @@
+$button-background-color: #FF3E79;
+$button-color: white;
+
+$step: 8px;
+$height: $step * 4;
+
+.button {
+  align-items: center;
+  //align-content: baseline;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-left: $step;
+  width: $step * 17;
+  height: $height;
+  background-color: $button-background-color;
+  border-radius: $height / 2;
+  border-width: 0;
+  text-align: right;
+  cursor: pointer;
+
+  &__label {
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: bold;
+    color: $button-color;
+    text-align: right;
+    text-transform: uppercase;
+    padding-right: $step;
+  }
+
+  &:hover, &:focus {
+    filter: drop-shadow(0 0 $step $button-background-color);
+    outline: none;
+  }
+
+}

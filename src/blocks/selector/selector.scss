@@ -1,0 +1,65 @@
+$screen-sm: 320px;
+$screen-md: 768px;
+$screen-xl: 1366px;
+
+$step: 8px;
+
+.selector {
+  background-color: inherit;
+  //background-color: #F2F2F2;
+  //padding-top: 16px;
+
+  &__wrapper {
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      padding-left: $step * 2;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      overflow: hidden;
+      padding-left: $step * 3;
+    }
+    @media screen and (min-width: $screen-xl) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      overflow: hidden;
+      padding-left: $step * 4;
+    }
+  }
+
+  &__item {
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      margin: $step * 2 $step 0 0;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      margin: $step * 3 $step * 3 0 0;
+    }
+    @media screen and (min-width: $screen-xl) {
+      margin: $step * 3 $step * 3 0 0;
+    }
+
+  }
+
+  &__more {
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      margin-left: $step * 3;
+    }
+    @media screen and (min-width: $screen-xl) {
+      margin-left: $step * 4;
+    }
+  }
+  //
+  //@media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+  //  //padding-left: 24px;
+  //}
+  //@media screen and (min-width: $screen-xl) {
+  //  //padding-left: 32px;
+  //}
+
+}

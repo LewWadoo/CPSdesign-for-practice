@@ -1,0 +1,11 @@
+$step: 8px;
+
+.language-switcher__language {
+  padding: 2px;
+  margin-right: $step / 2;
+  border: 2px solid transparent;
+
+  &--active {
+    color: #7E7E82;
+  }
+}

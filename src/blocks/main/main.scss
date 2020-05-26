@@ -1,0 +1,120 @@
+$screen-sm: 320px;
+$screen-md: 768px;
+$screen-xl: 1366px;
+
+$border-color: #D9FFF5;
+$background-color: #F8F8F8;
+
+$step: 8px;
+
+.main {
+  text-align: left;
+  color: #1b1c21;
+  background-color: $background-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+
+  @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+    margin-right: $step;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__heading {
+    margin-right: auto;
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      margin: 24px 0 24px 0;
+    }
+  }
+
+  &__menu {
+    align-items: center;
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      display: none;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      display: none;
+    }
+    @media screen and (min-width: $screen-xl) {
+      display: flex;
+    }
+  }
+
+  &__link {
+    font-weight: bold;
+    text-decoration: none;
+    color: #1b1c21;
+  }
+
+  &__button-text {
+    padding: 8px 32px;
+    color: #7E7E82;
+    white-space: nowrap;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+
+    &:focus {
+      background-color: white;
+    }
+  }
+
+  &__button-icon {
+    margin-left: 8px;
+    margin-right: 32px;
+  }
+
+  &__navigation-bar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 3 * $step;
+    -ms-overflow-style: none;
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      flex-wrap: nowrap;
+      overflow: auto;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      flex-wrap: nowrap;
+      overflow: auto;
+    }
+    @media screen and (min-width: $screen-xl) {
+      flex-wrap: wrap;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__fade {
+    position: absolute;
+    height: $step * 100;
+    left: 92.5%;
+    right: 0%;
+    z-index: 2;
+    background-image: linear-gradient(to left, #F8F8F8 20%, rgba(248, 248, 248, 0.0001) 100%);
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      display: inline;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      display: inline;
+    }
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+}

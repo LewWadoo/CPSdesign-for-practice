@@ -1,0 +1,116 @@
+@import "/node_modules/normalize.css/normalize.css";
+@import "/node_modules/swiper/css/swiper.min.css";
+
+@import "src/blocks/page/page.scss";
+@import "src/blocks/header/header.scss";
+@import "src/blocks/heading/heading.scss";
+@import "src/blocks/main/main.scss";
+@import "src/blocks/content/content.scss";
+@import "src/blocks/more/more.scss";
+@import "src/blocks/footer/footer.scss";
+@import "src/blocks/button-icon/button-icon.scss";
+@import "src/blocks/button-text/button-text.scss";
+@import "src/blocks/button-brand/button-brand";
+@import "src/blocks/button-device/button-device.scss";
+@import "src/blocks/button-service/button-service.scss";
+@import "src/blocks/button-commercial-offer/button-commercial-offer";
+@import "src/blocks/button/button.scss";
+@import "src/blocks/phone/phone.scss";
+@import "src/blocks/language-switcher/language-switcher.scss";
+@import "src/blocks/selector/selector.scss";
+@import "src/blocks/sub-header/sub-header.scss";
+@import "src/blocks/price-list/price-list.scss";
+@import "src/blocks/service-table/service-table.scss";
+@import "src/blocks/text-link/text-link.scss";
+@import "src/blocks/submit-conditions/submit-conditions.scss";
+@import "src/blocks/form-element/form-element.scss";
+@import "src/blocks/burger-menu/burger-menu";
+@import "src/blocks/form-feedback/form-feedback";
+@import "src/blocks/form-call/form-call";
+@import "src/blocks/logo/logo";
+@import "src/blocks/device-list/device-list";
+@import "src/blocks/brand-list/brand-list";
+
+@font-face {
+  font-family: $base-font;
+  src: url('fonts/TTLakes-Regular.eot');
+  src: local('fonts/TT Lakes Regular'), local('fonts/TTLakes-Regular'), url('fonts/TTLakes-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/TTLakes-Regular.woff') format('woff'), url('fonts/TTLakes-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Lakes Medium';
+  src: url('fonts/TTLakes-Medium.eot');
+  src: url('fonts/TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
+  url('fonts/TTLakes-Medium.woff') format('woff'),
+  url('fonts/TTLakes-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $base-font;
+  src: url('fonts/TTLakes-Bold.eot');
+  src: local('fonts/TT Lakes Bold'), local('fonts/TTLakes-Bold'), url('fonts/TTLakes-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/TTLakes-Bold.woff') format('woff'), url('fonts/TTLakes-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.swiper-pagination-bullet {
+  background-color: #B5B6BC;
+}
+
+.swiper-pagination {
+  //margin-top: $step * 2;
+}
+
+#more-devices.swiper-container {
+  @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+    height: 228px;
+  }
+}
+
+#more-brands.swiper-container {
+  @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+    height: 140px;
+  }
+}
+
+#swiper-services.swiper-container {
+  @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+    height: 260px;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+
+.swiper-pagination-clickable {
+  @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+    display: block;
+  }
+  @media screen and (min-width: $screen-md) {
+    display: none;
+  }
+
+}
+
+#more-content .more__content--shrinked {
+  height: $step * 11;
+}
+
+#more-brands.more__content--shrinked {
+
+  height: $step * 24;
+
+}
+
+#more-devices.more__content--shrinked {
+
+  height: $step * 24;
+
+}
+

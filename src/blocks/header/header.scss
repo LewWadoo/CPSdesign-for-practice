@@ -1,0 +1,160 @@
+$screen-sm: 320px;
+$screen-md: 768px;
+$screen-xl: 1366px;
+
+$header-background-color: white;
+$divider-background-color: #EAEAEA;
+
+$step: 8px;
+$left-margin: 3 * $step;
+$headerHeight: $step * 11;
+
+.header {
+  //position: relative;
+  //display: flex;
+  //flex-direction: column;
+  //z-index: 2;
+  //background-color: aqua;
+
+  //&__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 $step * 3;
+  box-sizing: border-box;
+    //background-color: aqua;
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      width: 100%;
+      min-height: $headerHeight;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      width: 100%;
+      min-height: $headerHeight;
+    }
+    @media screen and (min-width: $screen-xl) {
+      //height: $headerHeight;
+      flex: 0 0 $headerHeight;
+      width: $step * 40;
+    }
+
+    &--menu-md {
+
+    }
+  //}
+
+  &__button-icon {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    flex-shrink: 0;
+
+    &--hidden {
+      display: none;
+    }
+
+    &--visible {
+      display: flex;
+    }
+  }
+
+  &__button-repair {
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__button-check_status {
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__contacts {
+    margin-left: 8px;
+    margin-right: 8px;
+    flex-shrink: 0;
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      display: none;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      display: flex;
+    }
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    margin-left: 8px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    flex-grow: 1;
+  }
+
+  &__logo-divider {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 2px;
+    height: 32px;
+    background-color: $divider-background-color;
+    flex-shrink: 0;
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      display: none;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      display: inline;
+    }
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__settings-divider {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 2px;
+    height: 32px;
+    background-color: $divider-background-color;
+    flex-shrink: 0;
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      display: inline;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      display: inline;
+    }
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+  //
+  //&__search {
+  //
+    &--visible {
+      display: flex;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  //
+  //  //display: none;
+  //  //
+  //  //@media screen and (min-width: $screen-xl) {
+  //  //  display: flex;
+  //  //}
+  //}
+
+  //&__modal-call {
+}
+
+

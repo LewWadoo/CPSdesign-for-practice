@@ -1,0 +1,35 @@
+.button-text {
+  font-family: 'TT Lakes';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+  background-color: inherit;
+  transition: background-color 1s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(65, 246, 215, 0.2);
+  }
+
+  &:focus {
+    border-style: solid;
+    border-color: #B8FFEC;
+    border: 2px 2px 2px 4px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    outline: none;
+  }
+
+  &--active {
+    border: 2px solid #B8FFEC;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    outline: none;
+    background-color: white;
+  }
+}

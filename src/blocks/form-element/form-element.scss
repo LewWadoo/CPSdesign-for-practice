@@ -1,0 +1,9 @@
+$placeholder-color: #B5B6BC;
+
+$step: 8px;
+
+.form-element {
+  color: $placeholder-color;
+  resize: none;
+  padding: $step $step * 2;
+}

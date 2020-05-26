@@ -1,0 +1,23 @@
+$screen-sm: 320px;
+$screen-md: 768px;
+$screen-xl: 1366px;
+
+$step: 8px;
+
+.heading {
+    border-left: 4px solid #41f6d7;
+    border-radius: 4px;
+    font-size: 28px;
+    font-weight: bold;
+    padding: $step $step * 3;
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+        padding-left: 16px;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+        padding-left: 24px;
+    }
+    @media screen and (min-width: $screen-xl) {
+        padding-left: 32px;
+    }
+}

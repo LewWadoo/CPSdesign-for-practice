@@ -1,0 +1,62 @@
+$screen-sm: 320px;
+$screen-md: 768px;
+$screen-xl: 1366px;
+
+$step: 8px;
+
+.content {
+  display: flex;
+  padding-left: 34px;
+
+  @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+    flex-direction: row;
+  }
+  @media screen and (min-width: $screen-xl) {
+    flex-direction: row;
+  }
+
+  &__image {
+    flex-grow: 1;
+    flex-shrink: 0;
+    background-image: url("../img/logo_photo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      flex-basis: 300px;
+      /*padding: 20px 0;*/
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      flex-basis: 300px;
+      padding: 0 0 20px 0;
+    }
+    @media screen and (min-width: $screen-xl) {
+      flex-basis: 300px;
+      height: 300px;
+      padding: 0 0 20px 0;
+    }
+  }
+
+  &__text {
+    padding: 12px;
+    font-size: 14px;
+    line-height: 20px;
+
+    &--shrinked {
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      height: 100px;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      height: 160px;
+    }
+    @media screen and (min-width: $screen-xl) {
+      height: 180px;
+    }
+    }
+  }
+}

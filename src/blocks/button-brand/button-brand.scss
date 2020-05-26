@@ -1,0 +1,29 @@
+$button-background-color: white;
+$button-border-color: #EAEAEA;
+
+$step: 8px;
+
+.button-brand {
+  display: flex;
+
+  &__label {
+    background-color: $button-background-color;
+    height: $step * 9;
+    border: 1px solid $button-border-color;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: $step * 30;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    margin-left: $step * 2;
+  }
+
+  &__button {
+    margin-right: $step * 2;
+  }
+}

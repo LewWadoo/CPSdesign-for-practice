@@ -1,0 +1,30 @@
+$screen-sm: 320px;
+$screen-md: 768px;
+$screen-xl: 1366px;
+
+$step: 8px;
+
+.sub-header {
+  background-image: linear-gradient(to right, #F8F8F8, white);
+  height: 55px;
+  padding: 0;
+
+  &__heading {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #7E7E82;
+    font-weight: normal;
+    padding: 16px;
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      padding-left: 16px;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      padding-left: 24px;
+    }
+    @media screen and (min-width: $screen-xl) {
+      padding-left: 32px;
+    }
+  }
+}

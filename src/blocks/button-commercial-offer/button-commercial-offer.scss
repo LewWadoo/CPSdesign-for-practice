@@ -1,0 +1,62 @@
+$button-font-family: 'TT Lakes Medium';
+$base-font: 'TT Lakes';
+$button-background-color: transparent;
+$button-color: #FF3E79;
+$color: #1B1C21;
+
+$step: 8px;
+
+.button-commercial-offer {
+  padding-left: $step * 2;
+  padding-right: $step * 2;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &__description {
+    font-family: $base-font;
+    font-size: 14px;
+    line-height: 20px;
+    color: $color;
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      //width: 100%;
+    }
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      width: $step * 52;
+    }
+    @media screen and (min-width: $screen-xl) {
+      width: $step * 52;
+    }
+
+  }
+
+  &__button {
+    text-align: left;
+    padding: 0;
+    border: none;
+    background-color: $button-background-color;
+    transition: filter 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      filter: drop-shadow(0 0 8px $color);
+    }
+  }
+
+  &__text {
+    font-family: $button-font-family;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__image {
+    vertical-align: top;
+    display: inline;
+    transition: filter 0.5s;
+
+    &:hover {
+      filter: drop-shadow(0 0 $step $step $button-color);
+    }
+  }
+
+}

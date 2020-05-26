@@ -1,0 +1,43 @@
+$border-color: #EAEAEA;
+
+$step: 8px;
+
+.button-device {
+  display: flex;
+  cursor: pointer;
+
+  &--hidden {
+    display: none;
+  }
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 30 * $step;
+    height: 160px;
+    box-sizing: border-box;
+
+    cursor: pointer;
+    padding: $step * 2;
+    border: 1px solid $border-color;
+    background-color: white;
+    border-radius: 6px;
+  }
+
+  &__title {
+    font-family: 'TT Lakes Medium';
+    font-size: $step * 2;
+    line-height: $step * 3;
+    align-self: flex-start;
+  }
+
+  &__button {
+    transition: filter 0.5s;
+
+    &:hover {
+      filter: drop-shadow(0 0 8px #FF3E79);
+    }
+  }
+
+}
