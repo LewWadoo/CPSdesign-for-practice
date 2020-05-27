@@ -45,6 +45,7 @@
       min-height: 88px; } }
   @media screen and (min-width: 1366px) {
     .header {
+      min-height: 88px;
       flex: 0 0 88px;
       width: 320px; } }
   .header__button-icon {
@@ -157,7 +158,7 @@
     margin-right: auto; }
     @media screen and (min-width: 320px) and (max-width: 768px) {
       .main__heading {
-        margin: 24px 0 24px 0; } }
+        margin: 24px 0; } }
   .main__menu {
     align-items: center; }
     @media screen and (min-width: 320px) and (max-width: 768px) {
@@ -191,6 +192,8 @@
     flex-direction: row;
     align-items: center;
     padding-left: 24px;
+    scrollbar-width: none;
+    /* Firefox */
     -ms-overflow-style: none; }
     @media screen and (min-width: 320px) and (max-width: 768px) {
       .main__navigation-bar {
@@ -243,8 +246,7 @@
     background-position: center; }
     @media screen and (min-width: 320px) and (max-width: 768px) {
       .content__image {
-        flex-basis: 300px;
-        /*padding: 20px 0;*/ } }
+        flex-basis: 300px; } }
     @media screen and (min-width: 768px) and (max-width: 1366px) {
       .content__image {
         flex-basis: 300px;
@@ -258,15 +260,6 @@
     padding: 12px;
     font-size: 14px;
     line-height: 20px; }
-    @media screen and (min-width: 320px) and (max-width: 768px) {
-      .content__text--shrinked {
-        height: 100px; } }
-    @media screen and (min-width: 768px) and (max-width: 1366px) {
-      .content__text--shrinked {
-        height: 160px; } }
-    @media screen and (min-width: 1366px) {
-      .content__text--shrinked {
-        height: 180px; } }
 
 .more {
   display: flex;
@@ -408,9 +401,7 @@
   .button-text:hover {
     background-color: rgba(65, 246, 215, 0.2); }
   .button-text:focus {
-    border-style: solid;
-    border-color: #B8FFEC;
-    border: 2px 2px 2px 4px;
+    border: 2px 2px 2px 4px solid #B8FFEC;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -583,15 +574,6 @@
     transition: -webkit-filter 0.5s;
     transition: filter 0.5s;
     transition: filter 0.5s, -webkit-filter 0.5s; }
-    .button-service__button:hover {
-      -webkit-filter: drop-shadow(0 0 8px #FF3E79);
-              filter: drop-shadow(0 0 8px #FF3E79); }
-    @media screen and (min-width: 320px) and (max-width: 768px) {
-      .button-service__button {
-        /* Button in the right left corner of the swiper-slide */ } }
-    @media screen and (min-width: 768px) {
-      .button-service__button {
-        /* Button in the last column of the price-list table */ } }
 
 .button-commercial-offer {
   padding-left: 16px;
@@ -618,9 +600,10 @@
     transition: filter 0.2s;
     transition: filter 0.2s, -webkit-filter 0.2s;
     cursor: pointer; }
-    .button-commercial-offer__button:hover {
+    .button-commercial-offer__button:hover, .button-commercial-offer__button:focus {
       -webkit-filter: drop-shadow(0 0 8px #1B1C21);
-              filter: drop-shadow(0 0 8px #1B1C21); }
+              filter: drop-shadow(0 0 8px #1B1C21);
+      outline: none; }
   .button-commercial-offer__text {
     font-family: "TT Lakes Medium";
     font-size: 16px;
@@ -631,9 +614,6 @@
     transition: -webkit-filter 0.5s;
     transition: filter 0.5s;
     transition: filter 0.5s, -webkit-filter 0.5s; }
-    .button-commercial-offer__image:hover {
-      -webkit-filter: drop-shadow(0 0 8px 8px #FF3E79);
-              filter: drop-shadow(0 0 8px 8px #FF3E79); }
 
 .button {
   align-items: center;
@@ -655,7 +635,12 @@
     color: white;
     text-align: right;
     text-transform: uppercase;
-    padding-right: 8px; }
+    padding-right: 8px;
+    cursor: pointer; }
+    .button__label:hover, .button__label:focus {
+      -webkit-filter: drop-shadow(0 0 8px #FF3E79);
+              filter: drop-shadow(0 0 8px #FF3E79);
+      outline: none; }
   .button:hover, .button:focus {
     -webkit-filter: drop-shadow(0 0 8px #FF3E79);
             filter: drop-shadow(0 0 8px #FF3E79);
@@ -713,7 +698,8 @@
 .sub-header {
   background-image: linear-gradient(to right, #F8F8F8, white);
   height: 55px;
-  padding: 0; }
+  padding: 0;
+  border-top: 1px solid #D9FFF5; }
   .sub-header__heading {
     margin: 0;
     text-transform: uppercase;
@@ -744,49 +730,6 @@
   .price-list__table {
     display: flex;
     flex-direction: column; } }
-
-.service-table {
-  display: flex;
-  flex-direction: column;
-  background-color: white; }
-  .service-table__header-row {
-    display: flex;
-    flex-direction: row;
-    color: #7E7E82;
-    font-family: 'TT Lakes Medium';
-    font-weight: normal;
-    background-color: #F8F8F8;
-    margin: 0 16px; }
-  .service-table__header-caption {
-    padding: 16px 0;
-    flex: 1 0 100px; }
-    .service-table__header-caption:first-child {
-      flex: 1 0 400px; }
-  .service-table__row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: space-between;
-    align-items: center;
-    color: #1B1C21;
-    font-size: 14px;
-    line-height: 18px;
-    background-color: white;
-    margin: 0 16px;
-    border-bottom: 1px solid #EAEAEA;
-    padding: 0; }
-    .service-table__row:last-child {
-      border-bottom: none; }
-  .service-table__cell {
-    flex: 1 0 100px;
-    padding: 16px 0;
-    align-items: center; }
-    .service-table__cell:first-child {
-      flex: 1 0 400px; }
-    .service-table__cell:last-child {
-      text-align: right; }
-  .service-table__button {
-    align-self: flex-end; }
 
 .text-link {
   color: #FF3E79;
@@ -827,7 +770,7 @@
     .burger-menu {
       position: static;
       width: 320px;
-      height: 600px; } }
+      height: 800px; } }
   .burger-menu__menu {
     display: flex;
     flex-grow: 1;
@@ -842,7 +785,7 @@
     border: 2px solid transparent;
     border-left: 4px solid transparent;
     box-sizing: border-box;
-    padding: 8px 24px 8px 24px;
+    padding: 8px 24px;
     margin-bottom: 16px; }
     .burger-menu__button-text--active {
       border-left: 4px solid #41f6d7;
@@ -863,97 +806,57 @@
   .burger-menu__phone {
     margin: 0.5em 0 0 24px; }
 
-.form-feedback {
+.form {
   position: absolute;
   top: 0;
   background-color: white;
   box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2); }
   @media screen and (min-width: 320px) and (max-width: 768px) {
-    .form-feedback {
+    .form {
       left: 0;
       width: 100%;
       flex-direction: column; } }
   @media screen and (min-width: 768px) and (max-width: 1366px) {
-    .form-feedback {
+    .form {
       left: 0;
       width: 320px;
       box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
       flex-direction: column; } }
   @media screen and (min-width: 1366px) {
-    .form-feedback {
+    .form {
       right: 0;
       width: 440px;
       height: 676px;
       flex-direction: row; } }
-  .form-feedback--visible {
+  .form--visible {
     display: flex;
     z-index: 2; }
-  .form-feedback--hidden {
+  .form--hidden {
     display: none; }
   @media screen and (min-width: 1366px) {
-    .form-feedback__header {
+    .form__header {
       align-items: flex-start;
       padding-top: 32px; } }
-  .form-feedback__main {
+  .form__main {
     display: flex;
     flex-direction: column; }
     @media screen and (min-width: 1366px) {
-      .form-feedback__main {
+      .form__main {
         padding-top: 32px; } }
-  .form-feedback__heading {
+  .form__heading {
     text-align: left; }
-  .form-feedback__form {
+  .form__form {
     display: flex;
     flex-direction: column; }
-  .form-feedback__form-name {
+  .form__form-name {
     margin: 8px 16px; }
-  .form-feedback__form-phone {
+  .form__form-phone {
     margin: 8px 16px; }
-  .form-feedback__form-email {
+  .form__form-email {
     margin: 8px 16px; }
-  .form-feedback__form-message {
+  .form__form-message {
     margin: 8px 16px; }
-  .form-feedback__form-submit-button {
-    margin: 8px 16px;
-    align-self: flex-end; }
-
-.form-call {
-  display: flex;
-  position: absolute;
-  top: 0;
-  background-color: white;
-  box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2); }
-  @media screen and (min-width: 320px) and (max-width: 768px) {
-    .form-call {
-      left: 0;
-      width: 100%;
-      flex-direction: column; } }
-  @media screen and (min-width: 768px) and (max-width: 1366px) {
-    .form-call {
-      left: 0;
-      width: 320px;
-      box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
-      flex-direction: column; } }
-  @media screen and (min-width: 1366px) {
-    .form-call {
-      right: 0;
-      width: 440px;
-      height: 676px;
-      flex-direction: row; } }
-  .form-call--visible {
-    display: flex;
-    flex-direction: column;
-    z-index: 2; }
-  .form-call--hidden {
-    display: none; }
-  .form-call__heading {
-    text-align: left; }
-  .form-call__form {
-    display: flex;
-    flex-direction: column; }
-  .form-call__form-phone {
-    margin: 8px 16px; }
-  .form-call__form-submit-button {
+  .form__form-submit-button {
     margin: 8px 16px;
     align-self: flex-end; }
 
@@ -963,40 +866,6 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(./static/logo.svg); }
-
-.device-list__wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  overflow: hidden; }
-
-@media screen and (min-width: 320px) and (max-width: 768px) {
-  .device-list__button-device {
-    margin: 16px 0 0 8px; } }
-
-@media screen and (min-width: 768px) and (max-width: 1366px) {
-  .device-list__button-device {
-    margin: 24px 0 0 24px; } }
-
-.device-list__more {
-  margin-left: 32px; }
-
-.brand-list__wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  overflow: hidden; }
-
-@media screen and (min-width: 320px) and (max-width: 768px) {
-  .brand-list__button-brand {
-    margin: 16px 0 0 8px; } }
-
-@media screen and (min-width: 768px) and (max-width: 1366px) {
-  .brand-list__button-brand {
-    margin: 24px 0 0 24px; } }
-
-.brand-list__more {
-  margin-left: 32px; }
 
 @font-face {
   font-family: "TT Lakes";
@@ -1046,8 +915,17 @@
   .swiper-pagination-clickable {
     display: none; } }
 
-#more-content .more__content--shrinked {
-  height: 88px; }
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  #more-content .more__content--shrinked {
+    height: 88px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+  #more-content .more__content--shrinked {
+    height: 160px; } }
+
+@media screen and (min-width: 1366px) {
+  #more-content .more__content--shrinked {
+    height: 176px; } }
 
 #more-brands.more__content--shrinked {
   height: 192px; }
