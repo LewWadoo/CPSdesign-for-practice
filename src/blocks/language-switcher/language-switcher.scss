@@ -1,11 +1,13 @@
 $step: 8px;
 
+$color-active: #7E7E82;
+
 .language-switcher__language {
   padding: 2px;
   margin-right: $step / 2;
   border: 2px solid transparent;
 
   &--active {
-    color: #7E7E82;
+    color: $color-active;
   }
 }

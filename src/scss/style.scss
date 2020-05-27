@@ -20,16 +20,14 @@
 @import "src/blocks/selector/selector.scss";
 @import "src/blocks/sub-header/sub-header.scss";
 @import "src/blocks/price-list/price-list.scss";
-@import "src/blocks/service-table/service-table.scss";
 @import "src/blocks/text-link/text-link.scss";
 @import "src/blocks/submit-conditions/submit-conditions.scss";
 @import "src/blocks/form-element/form-element.scss";
 @import "src/blocks/burger-menu/burger-menu";
-@import "src/blocks/form-feedback/form-feedback";
-@import "src/blocks/form-call/form-call";
+@import "src/blocks/form-feedback/form";
 @import "src/blocks/logo/logo";
-@import "src/blocks/device-list/device-list";
-@import "src/blocks/brand-list/brand-list";
+
+$color-swiper-pagination-bullet: #B5B6BC;
 
 @font-face {
   font-family: $base-font;
@@ -58,11 +56,7 @@
 }
 
 .swiper-pagination-bullet {
-  background-color: #B5B6BC;
-}
-
-.swiper-pagination {
-  //margin-top: $step * 2;
+  background-color: $color-swiper-pagination-bullet;
 }
 
 #more-devices.swiper-container {
@@ -95,22 +89,26 @@
   @media screen and (min-width: $screen-md) {
     display: none;
   }
-
 }
 
 #more-content .more__content--shrinked {
-  height: $step * 11;
+
+  @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+    height: $step * 11;
+  }
+  @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+    height: $step * 20;
+  }
+  @media screen and (min-width: $screen-xl) {
+    height: $step * 22;
+  }
 }
 
 #more-brands.more__content--shrinked {
-
   height: $step * 24;
-
 }
 
 #more-devices.more__content--shrinked {
-
   height: $step * 24;
-
 }
 

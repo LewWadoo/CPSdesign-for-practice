@@ -4,6 +4,9 @@ $screen-xl: 1366px;
 
 $border-color: #D9FFF5;
 $background-color: #F8F8F8;
+$color-link: #1b1c21;
+$color-button-text: #7E7E82;
+$color-focus: white;
 
 $step: 8px;
 
@@ -32,7 +35,7 @@ $step: 8px;
     margin-right: auto;
 
     @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
-      margin: 24px 0 24px 0;
+      margin: $step * 3 0;
     }
   }
 
@@ -53,25 +56,25 @@ $step: 8px;
   &__link {
     font-weight: bold;
     text-decoration: none;
-    color: #1b1c21;
+    color: $color-link;
   }
 
   &__button-text {
     padding: 8px 32px;
-    color: #7E7E82;
+    color: $color-button-text;
     white-space: nowrap;
     flex-shrink: 0;
     box-sizing: border-box;
     border: 2px solid transparent;
 
     &:focus {
-      background-color: white;
+      background-color: $color-focus;
     }
   }
 
   &__button-icon {
-    margin-left: 8px;
-    margin-right: 32px;
+    margin-left: $step;
+    margin-right: $step * 4;
   }
 
   &__navigation-bar {
@@ -80,6 +83,7 @@ $step: 8px;
     flex-direction: row;
     align-items: center;
     padding-left: 3 * $step;
+    scrollbar-width: none;  /* Firefox */
     -ms-overflow-style: none;
 
     @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
@@ -105,7 +109,7 @@ $step: 8px;
     left: 92.5%;
     right: 0%;
     z-index: 2;
-    background-image: linear-gradient(to left, #F8F8F8 20%, rgba(248, 248, 248, 0.0001) 100%);
+    background-image: linear-gradient(to left, $background-color 20%, rgba(248, 248, 248, 0.0001) 100%);
 
     @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
       display: inline;

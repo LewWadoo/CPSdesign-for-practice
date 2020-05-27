@@ -1,3 +1,7 @@
+$color-background: rgba(65, 246, 215, 0.2);
+$color-border-focus: #B8FFEC;
+$color-background-active: white;
+
 .button-text {
   font-family: 'TT Lakes';
   font-weight: normal;
@@ -11,13 +15,11 @@
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(65, 246, 215, 0.2);
+    background-color: $color-background;
   }
 
   &:focus {
-    border-style: solid;
-    border-color: #B8FFEC;
-    border: 2px 2px 2px 4px;
+    border: 2px 2px 2px 4px solid $color-border-focus;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -25,11 +27,11 @@
   }
 
   &--active {
-    border: 2px solid #B8FFEC;
+    border: 2px solid $color-border-focus;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     outline: none;
-    background-color: white;
+    background-color: $color-background-active;
   }
 }

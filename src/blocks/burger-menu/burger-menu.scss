@@ -4,6 +4,9 @@ $screen-xl: 1366px;
 
 $header-background-color: white;
 $divider-background-color: #EAEAEA;
+$color-box-shadow: rgba(14, 24, 80, 0.2);
+$color-active: #7E7E82;
+$color-border-left: #41f6d7;
 
 $step: 8px;
 $left-margin: 3 * $step;
@@ -21,7 +24,7 @@ $headerHeight: $step * 11;
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
+    box-shadow: $step * 2 0px 52px $color-box-shadow;
     width: 100%;
   }
   @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
@@ -29,33 +32,13 @@ $headerHeight: $step * 11;
     top: 0;
     left: 0;
     width: $step * 40;
-    box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
+    box-shadow: $step * 2 0px 52px $color-box-shadow;
     height: 100vh;
   }
   @media screen and (min-width: $screen-xl) {
     position: static;
     width: $step * 40;
-    height: 600px;
-  }
-  //position: relative;
-  //top: 0;
-  //left: 0;
-  //width: 100%;
-  //min-height: 100%;
-  //background-color: aqua;
-  //z-index: 100;
-
-  &__wrapper {
-    //position: absolute;
-    //top: 0;
-    //left: 0;
-    //width: 100%;
-    //height: 100%;
-    //background-color: aqua;
-    //z-index: 5;
-  }
-
-  &__content {
+    height: $step * 100;
   }
 
   &__menu {
@@ -74,26 +57,14 @@ $headerHeight: $step * 11;
     border: 2px solid transparent;
     border-left: 4px solid transparent;
     box-sizing: border-box;
-    //background-color: inherit;
-    padding: 8px 24px 8px 24px;
-    margin-bottom: 16px;
-
-    //& :first-child {
-    //  margin-left: 24px;
-    //  margin-right: 8px;
-    //}
-    //
-    //& :last-child {
-    //  margin-left: 8px;
-    //  margin-right: 24px;
-    //}
+    padding: $step $step * 3;
+    margin-bottom: $step * 2;
 
     &--active {
-      border-left: 4px solid #41f6d7;
+      border-left: 4px solid $color-border-left;
       border-radius: 4px;
-      color: #7E7E82;
+      color: $color-active;
     }
-
   }
 
   &__button-icon {
@@ -102,24 +73,13 @@ $headerHeight: $step * 11;
     flex-shrink: 0;
   }
 
-  //&__header {
-  //
-  //}
-
   &--hidden {
     display: none;
-    //@media screen and (min-width: $screen-xl) {
-    //  display: flex;
-    //}
   }
 
   &--visible {
     display: flex;
   }
-  //
-  //&__header-item {
-  //
-  //}
 
   &__footer {
     & :first-child {
@@ -134,13 +94,4 @@ $headerHeight: $step * 11;
   &__phone {
     margin: 0.5em 0 0 $left-margin;
   }
-
-  //&__item--hidden {
-  //  display: none;
-
-  //@media screen and (min-width: $screen-xl) {
-  //  display: flex;
-  //}
-  //}
-
 }

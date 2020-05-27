@@ -8,8 +8,7 @@ $divider-background-color: #EAEAEA;
 $step: 8px;
 $left-margin: 3 * $step;
 
-.form-feedback {
-  //display: flex;
+.form {
   position: absolute;
   top: 0;
   background-color: $header-background-color;
@@ -35,7 +34,6 @@ $left-margin: 3 * $step;
 
   &--visible {
     display: flex;
-    //flex-direction: column;
     z-index: 2;
   }
 

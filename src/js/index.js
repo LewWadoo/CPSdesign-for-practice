@@ -4,10 +4,10 @@ import Swiper from '../../node_modules/swiper/js/swiper.min.js';
 
 import {
     classHeader,
-    modifierHidden,
-    modifierVisible,
+    classHeaderButtonIcon,
     elementSeparator,
-    classHeaderButtonIcon
+    modifierHidden,
+    modifierVisible
 } from "../blocks/header/header.js";
 
 import {
@@ -21,22 +21,14 @@ import {
     destroyMore
 } from "../blocks/more/more";
 
-import {classContent} from '../blocks/content/content.js'
-import {createSelector, destroySelector} from '../blocks/selector/selector.js'
-import {classButtonIcon, classButtonIconChat, classButtonIconCross, classButtonIconBurger, classButtonIconCall
+import {
+    classButtonIconBurger,
+    classButtonIconCall,
+    classButtonIconChat,
+    classButtonIconCross
 } from "../blocks/button-icon/button-icon";
-import {classBurgerMenu, classBurgerMenuHeader} from "../blocks/burger-menu/burger-menu";
-import {
-    classFormFeedback,
-    classFormFeedbackHidden,
-    classFormFeedbackVisible,
-    // formFeedback
-} from "../blocks/form-feedback/form-feedback";
-import {
-    classFormCall,
-    classFormCallHidden,
-    classFormCallVisible
-} from "../blocks/form-call/form-call";
+import {classBurgerMenu} from "../blocks/burger-menu/burger-menu";
+import {classFormHidden, classFormVisible,} from "../blocks/form-feedback/form";
 
 const resolutionMobileToPad = 768;
 const resolutionPadToPC = 1366;
@@ -56,17 +48,9 @@ const classSwiperPrefix = classSwiper + prefix;
 const classSwiperContainer = classSwiperPrefix + 'container';
 const classSwiperWrapper = classSwiperPrefix + 'wrapper';
 const classSwiperPagination = classSwiperPrefix + 'pagination';
-const classSwiperPaginationClickable = classSwiperPagination + prefix + "clickable"
 const classSwiperSlide = classSwiperPrefix + 'slide';
 
-// const moreAndContent = document.querySelector(classPrefix + classContent + ' > ' + classPrefix + classMore)
-const moreAndContent = document.getElementById("more-content")
-// console.log(moreAndContent)
-// const moreBrands = document.getElementById('more-brands');
-// const moreDevices = document.getElementById('more-devices');
-
 const swipers = document.querySelectorAll(classPrefix + classSwiper);
-// console.log(swipers)
 let swiperObject;
 let swiperContainers = [];
 let swiperWrappers = [];
@@ -80,26 +64,18 @@ for (let i = 0; i < swipers.length; i++) {
 }
 
 const createSwipers = function () {
-    // console.log("in createSwipers")
     for (let i = 0; i < swipers.length; i++) {
-        // console.log(swiperWrappers[i])
         if (!swiperWrappers[i].classList.contains(classSwiperWrapper)) {
             swiperWrappers[i].classList.add(classSwiperWrapper);
         }
-        // console.log(swiperWrappers[i])
-        // console.log(swiperPaginations[i])
         if (!swiperPaginations[i].classList.contains(classSwiperPagination)) {
             swiperPaginations[i].classList.add(classSwiperPagination);
         }
-        // console.log(swiperPaginations[i])
-        // console.log(swiperSlides[i])
         swiperSlides[i].forEach(slide => {
             if (!slide.classList.contains(classSwiperSlide)) {
                 slide.classList.add(classSwiperSlide);
             }
         });
-        // console.log(swiperSlides[i])
-        // console.log(swiperObject);
     }
     swiperObject = new Swiper(classPrefix + classSwiperContainer, swiperOptions);
 };
@@ -107,23 +83,14 @@ const createSwipers = function () {
 const destroySwipers = function () {
     for (let i = 0; i < swipers.length; i++) {
         if (typeof (swiperObject) != 'undefined') {
-            // console.log(swiperObject[i])
             swiperObject[i].destroy(true, true);
         }
-        // console.log(swiperWrappers[i])
         if (swiperWrappers[i].classList.contains(classSwiperWrapper)) {
             swiperWrappers[i].classList.remove(classSwiperWrapper);
         }
-        // console.log(swiperWrappers[i])
-        // console.log(swiperPaginations[i])
         if (swiperPaginations[i].classList.contains(classSwiperPagination)) {
             swiperPaginations[i].classList.remove(classSwiperPagination);
         }
-        // if (swiperPaginations[i].classList.contains(classSwiperPaginationClickable)) {
-        //     swiperPaginations[i].classList.remove(classSwiperPaginationClickable);
-        // }
-        // console.log(swiperPaginations[i])
-        // console.log(swiperSlides[i])
         swiperSlides[i].forEach(slide => {
             if (slide.classList.contains(classSwiperSlide)) {
                 slide.classList.remove(classSwiperSlide);
@@ -135,24 +102,14 @@ const destroySwipers = function () {
 let clientWidthCurrent = document.body.clientWidth;
 let clientWidthPrevious = clientWidthCurrent;
 
+const moreAndContent = document.getElementById("more-content")
 const moreAndSwipers = document.querySelectorAll(classPrefix + classSwiper + classPrefix + classMore);
-const swiperServices = document.getElementById("swiper-services")
-// const classPriceListTable = "price-list__table"
-// const priceListTable = swiperServices.querySelector(classPrefix + classPriceListTable)
-
-// const destroyPriceListTable = function () {
-//     if (priceListTable.classList.contains(classPriceListTable)) {
-//         priceListTable.classList.remove(classPriceListTable)
-//     }
-// }
 
 const toggleSwiperResolution = function () {
     createSwipers();
     moreAndSwipers.forEach(moreAndSwiper => {
         if (moreAndSwiper.classList.contains(classMore)) {
             destroyMore(moreAndSwiper)
-            // destroySelector(moreAndSwiper)
-            // destroyPriceListTable()
         }
     })
 }
@@ -161,7 +118,6 @@ const toggleMoreResolution = function () {
     moreAndSwipers.forEach(moreAndSwiper => {
         if (!moreAndSwiper.classList.contains(classMore)) {
             createMore(moreAndSwiper, classSwiperContainer)
-            // createSelector(moreAndSwiper)
         }
     });
     destroySwipers();
@@ -176,7 +132,6 @@ const addMoreClickListener = function (more, textToShrink, textToExpand) {
     moreButton.addEventListener('click', function () {
         const moreText = more.querySelector(classPrefix + classMoreText)
         const moreContent = more.querySelector(classPrefix + classMoreContent)
-        // console.log(moreContent)
         if (moreContent.classList.contains(classMoreContentShrinked)) {
             moreContent.classList.remove(classMoreContentShrinked);
             moreText.textContent = textToShrink;
@@ -190,30 +145,6 @@ const addMoreClickListener = function (more, textToShrink, textToExpand) {
 addMoreClickListener(moreAndContent, textContentHide, textContentReadMore);
 addMoreClickListener(moreAndSwipers[0], textContentHide, textContentShowAll);
 addMoreClickListener(moreAndSwipers[1], textContentHide, textContentShowAll);
-
-// for (let i = 0; i < mores.length; i++) {
-//     // moreTexts[i] = mores[i].querySelector(classPrefix + classMoreText);
-//     moreContents[i] = mores[i].querySelector(classPrefix + classMoreContent);
-//     moreImages[i] = mores[i].querySelector(classPrefix + classMoreImage);
-//     addMoreClickListener(mores[i], moreImages[i], moreTexts[i], moreContents[i])
-// }
-
-
-// const hideHeaderItem = function (item) {
-//     if (item.classList.contains(classHeaderItem + modifierVisible)) {
-//         item.classList.replace(classHeaderItem + modifierVisible, classHeaderItem + modifierHidden)
-//     } else if (!(item.classList.contains(classHeaderItem + modifierVisible) || (item.classList.contains(classHeaderItem + modifierHidden)))) {
-//         item.classList.add(classHeaderItem + modifierHidden)
-//     }
-// }
-
-// const hideSearch = function () {
-//     if (headerSearch.classList.contains(classHeaderItem + modifierVisible)) {
-//         headerSearch.classList.replace(classHeaderItem + modifierVisible, classHeaderItem + modifierHidden)
-//     } else if (!(headerSearch.classList.contains(classHeaderItem + modifierVisible) || (headerSearch.classList.contains(classHeaderItem + modifierHidden)))) {
-//         headerSearch.classList.add(classHeaderItem + modifierHidden)
-//     }
-// }
 
 const classPage = "page"
 const classPageHeader = classPage + elementSeparator + "header"
@@ -247,18 +178,15 @@ const closeMenuEventListener = function (evt) {
     do {
         if (targetElement === burgerMenu) {
             // This is a click inside. Do nothing, just return.
-            // document.getElementById("flyout-debug").textContent = "Clicked inside!";
             return;
         }
         // Go up the DOM
         targetElement = targetElement.parentNode;
     } while (targetElement);
-    // if (evt.target !== burgerMenu && evt.target.parentNode !== burgerMenu) {
-        hideMenu()
-    // }
+    hideMenu()
 }
 
-const formFeedback = document.querySelector(classPrefix + classFormFeedback)
+const formFeedback = document.getElementById("form-feedback")
 const crossFormFeedback = formFeedback.querySelector(classPrefix + classButtonIconCross)
 
 crossFormFeedback.addEventListener('click', function (evt) {
@@ -266,12 +194,12 @@ crossFormFeedback.addEventListener('click', function (evt) {
 })
 
 const showFormFeedback = function () {
-    formFeedback.classList.replace(classFormFeedbackHidden, classFormFeedbackVisible)
+    formFeedback.classList.replace(classFormHidden, classFormVisible)
     document.addEventListener("mouseup", closeFormFeedbackListener)
 }
 
 const hideFormFeedback = function () {
-    formFeedback.classList.replace(classFormFeedbackVisible, classFormFeedbackHidden)
+    formFeedback.classList.replace(classFormVisible, classFormHidden)
     document.removeEventListener("mouseup", closeFormFeedbackListener)
 }
 
@@ -281,18 +209,15 @@ const closeFormFeedbackListener = function (evt) {
     do {
         if (targetElement === formFeedback) {
             // This is a click inside. Do nothing, just return.
-            // document.getElementById("flyout-debug").textContent = "Clicked inside!";
             return;
         }
         // Go up the DOM
         targetElement = targetElement.parentNode;
     } while (targetElement);
-    // if (evt.target !== burgerMenu && evt.target.parentNode !== burgerMenu) {
     hideFormFeedback()
-    // }
 }
 
-const formCall = document.querySelector(classPrefix + classFormCall)
+const formCall = document.getElementById("form-call")
 const crossFormCall = formCall.querySelector(classPrefix + classButtonIconCross)
 
 crossFormCall.addEventListener('click', function (evt) {
@@ -300,12 +225,12 @@ crossFormCall.addEventListener('click', function (evt) {
 })
 
 const showFormCall = function () {
-    formCall.classList.replace(classFormCallHidden, classFormCallVisible)
+    formCall.classList.replace(classFormHidden, classFormVisible)
     document.addEventListener("mouseup", closeFormCallListener)
 }
 
 const hideFormCall = function () {
-    formCall.classList.replace(classFormCallVisible, classFormCallHidden)
+    formCall.classList.replace(classFormVisible, classFormHidden)
     document.removeEventListener("mouseup", closeFormCallListener)
 }
 
@@ -315,15 +240,12 @@ const closeFormCallListener = function (evt) {
     do {
         if (targetElement === formCall) {
             // This is a click inside. Do nothing, just return.
-            // document.getElementById("flyout-debug").textContent = "Clicked inside!";
             return;
         }
         // Go up the DOM
         targetElement = targetElement.parentNode;
     } while (targetElement);
-    // if (evt.target !== burgerMenu && evt.target.parentNode !== burgerMenu) {
     hideFormCall()
-    // }
 }
 
 burger.addEventListener('click', function (evt) {
@@ -387,8 +309,6 @@ toggleResolution()
 
 window.onresize = function (event) {
     clientWidthCurrent = document.body.clientWidth;
-    // console.log(clientWidthPrevious)
-    // console.log(clientWidthCurrent)
     if ((clientWidthCurrent <= resolutionMobileToPad && clientWidthPrevious > resolutionMobileToPad) || (clientWidthCurrent > resolutionMobileToPad && clientWidthPrevious <= resolutionMobileToPad)) {
         clientWidthPrevious = clientWidthCurrent
         toggleResolution()

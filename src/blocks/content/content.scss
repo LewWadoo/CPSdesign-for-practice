@@ -28,7 +28,6 @@ $step: 8px;
 
     @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
       flex-basis: 300px;
-      /*padding: 20px 0;*/
     }
     @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
       flex-basis: 300px;
@@ -45,18 +44,5 @@ $step: 8px;
     padding: 12px;
     font-size: 14px;
     line-height: 20px;
-
-    &--shrinked {
-
-    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
-      height: 100px;
-    }
-    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
-      height: 160px;
-    }
-    @media screen and (min-width: $screen-xl) {
-      height: 180px;
-    }
-    }
   }
 }

@@ -4,27 +4,33 @@ $screen-xl: 1366px;
 
 $step: 8px;
 
+$color-gradient-left: #F8F8F8;
+$color-gradient-right: white;
+$color-heading: #7E7E82;
+$color-border-top: #D9FFF5;
+
 .sub-header {
-  background-image: linear-gradient(to right, #F8F8F8, white);
+  background-image: linear-gradient(to right, $color-gradient-left, $color-gradient-right);
   height: 55px;
   padding: 0;
+  border-top: 1px solid $color-border-top;
 
   &__heading {
     margin: 0;
     text-transform: uppercase;
     font-size: 16px;
-    color: #7E7E82;
+    color: $color-heading;
     font-weight: normal;
-    padding: 16px;
+    padding: $step * 2;
 
     @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
-      padding-left: 16px;
+      padding-left: $step * 2;
     }
     @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
-      padding-left: 24px;
+      padding-left: $step * 3;
     }
     @media screen and (min-width: $screen-xl) {
-      padding-left: 32px;
+      padding-left: $step * 4;
     }
   }
 }

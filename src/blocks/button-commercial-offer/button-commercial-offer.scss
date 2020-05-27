@@ -1,3 +1,7 @@
+$screen-sm: 320px;
+$screen-md: 768px;
+$screen-xl: 1366px;
+
 $button-font-family: 'TT Lakes Medium';
 $base-font: 'TT Lakes';
 $button-background-color: transparent;
@@ -19,7 +23,6 @@ $step: 8px;
     color: $color;
 
     @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
-      //width: 100%;
     }
     @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
       width: $step * 52;
@@ -38,8 +41,9 @@ $step: 8px;
     transition: filter 0.2s;
     cursor: pointer;
 
-    &:hover {
-      filter: drop-shadow(0 0 8px $color);
+   &:hover, &:focus {
+      filter: drop-shadow(0 0 $step $color);
+      outline: none;
     }
   }
 
@@ -53,10 +57,6 @@ $step: 8px;
     vertical-align: top;
     display: inline;
     transition: filter 0.5s;
-
-    &:hover {
-      filter: drop-shadow(0 0 $step $step $button-color);
-    }
   }
 
 }

@@ -7,9 +7,8 @@ $button-color: #FF3E79;
 $step: 8px;
 
 .button-icon {
-    width: 40px;
-    height: 40px;
-    //flex-shrink: 0;
+    width: $step * 5;
+    height: $step * 5;
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;

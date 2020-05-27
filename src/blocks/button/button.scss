@@ -6,7 +6,6 @@ $height: $step * 4;
 
 .button {
   align-items: center;
-  //align-content: baseline;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -27,6 +26,12 @@ $height: $step * 4;
     text-align: right;
     text-transform: uppercase;
     padding-right: $step;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      filter: drop-shadow(0 0 $step $button-background-color);
+      outline: none;
+    }
   }
 
   &:hover, &:focus {
