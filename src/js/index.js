@@ -159,7 +159,6 @@ const hideMenu = function () {
         return
     }
     burgerMenu.classList.replace(classBurgerMenu + modifierVisible, classBurgerMenu + modifierHidden)
-    // document.removeEventListener("mouseup", closeMenuEventListener)
 }
 
 const showMenu = function () {
@@ -172,26 +171,8 @@ const showMenu = function () {
         headerButtonIconCross.classList.replace(classHeaderButtonIcon + modifierHidden, classHeaderButtonIcon + modifierVisible)
     } else {
         headerButtonIconCross.classList.replace(classHeaderButtonIcon + modifierHidden, classHeaderButtonIcon + modifierVisible)
-        // document.addEventListener('mouseup', closeMenuEventListener)
     }
 }
-
-// const closeMenuEventListener = function (evt) {
-//     if (clientWidthCurrent >= resolutionPadToPC) {
-//         return;
-//     }
-//     let targetElement = evt.target; // clicked element
-//
-//     do {
-//         if (targetElement === burgerMenu) {
-//             // This is a click inside. Do nothing, just return.
-//             return;
-//         }
-//         // Go up the DOM
-//         targetElement = targetElement.parentNode;
-//     } while (targetElement);
-//     hideMenu()
-// }
 
 const formFeedback = document.getElementById("form-feedback")
 const crossFormFeedback = formFeedback.querySelector(classPrefix + classButtonIconCross)
@@ -199,30 +180,6 @@ const crossFormFeedback = formFeedback.querySelector(classPrefix + classButtonIc
 crossFormFeedback.addEventListener('click', function (evt) {
     hideFormFeedback()
 })
-
-// const showFormFeedback = function () {
-//     formFeedback.classList.replace(classFormHidden, classFormVisible)
-//     document.addEventListener("mouseup", closeFormFeedbackListener)
-// }
-//
-// const hideFormFeedback = function () {
-//     formFeedback.classList.replace(classFormVisible, classFormHidden)
-//     document.removeEventListener("mouseup", closeFormFeedbackListener)
-// }
-
-// const closeFormFeedbackListener = function (evt) {
-//     let targetElement = evt.target; // clicked element
-//
-//     do {
-//         if (targetElement === formFeedback) {
-//             // This is a click inside. Do nothing, just return.
-//             return;
-//         }
-//         // Go up the DOM
-//         targetElement = targetElement.parentNode;
-//     } while (targetElement);
-//     hideFormFeedback()
-// }
 
 const formCall = document.getElementById("form-call")
 const crossFormCall = formCall.querySelector(classPrefix + classButtonIconCross)
@@ -243,6 +200,7 @@ const screenBlur = document.querySelector(classPrefix + "screen-blur")
 
 const showFormCall = function () {
     formCall.classList.replace(classFormHidden, classFormVisible)
+    hideFormFeedback()
     showScreenBlur()
 }
 
@@ -253,6 +211,7 @@ const hideFormCall = function () {
 
 const showFormFeedback = function () {
     formFeedback.classList.replace(classFormHidden, classFormVisible)
+    hideFormCall()
     showScreenBlur()
 }
 
@@ -267,20 +226,6 @@ screenBlur.addEventListener("mouseup", function (evt) {
     hideFormFeedback()
     hideMenu()
 })
-
-// const closeFormCallListener = function (evt) {
-//     let targetElement = evt.target; // clicked element
-//
-//     do {
-//         if (targetElement === formCall) {
-//             // This is a click inside. Do nothing, just return.
-//             return;
-//         }
-//         // Go up the DOM
-//         targetElement = targetElement.parentNode;
-//     } while (targetElement);
-//     hideFormCall()
-// }
 
 burger.addEventListener('click', function (evt) {
     showMenu()
