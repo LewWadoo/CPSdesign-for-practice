@@ -28,6 +28,9 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between; } }
+  @media screen and (min-width: 1366px) {
+    .page .page__main {
+      margin-left: 320px; } }
 
 .header {
   display: flex;
@@ -41,7 +44,6 @@
       min-height: 88px; } }
   @media screen and (min-width: 768px) and (max-width: 1366px) {
     .header {
-      width: 100%;
       min-height: 88px; } }
   @media screen and (min-width: 1366px) {
     .header {
@@ -401,11 +403,11 @@
   .button-text:hover {
     background-color: rgba(65, 246, 215, 0.2); }
   .button-text:focus {
-    border: 2px 2px 2px 4px solid #B8FFEC;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
-    outline: none; }
+    outline: none;
+    border: 2px solid #B8FFEC; }
   .button-text--active {
     border: 2px solid #B8FFEC;
     border-radius: 6px;
@@ -742,25 +744,25 @@
 .form-element {
   color: #B5B6BC;
   resize: none;
-  padding: 8px 16px; }
+  padding: 8px 16px;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px; }
 
 .burger-menu {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   flex-grow: 1;
   background-color: white;
-  z-index: 10; }
+  z-index: 10;
+  position: fixed; }
   @media screen and (min-width: 320px) and (max-width: 768px) {
     .burger-menu {
-      position: absolute;
       top: 0;
       left: 0;
       box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
       width: 100%; } }
   @media screen and (min-width: 768px) and (max-width: 1366px) {
     .burger-menu {
-      position: absolute;
       top: 0;
       left: 0;
       width: 320px;
@@ -768,7 +770,6 @@
       height: 100vh; } }
   @media screen and (min-width: 1366px) {
     .burger-menu {
-      position: static;
       width: 320px;
       height: 800px; } }
   .burger-menu__menu {
@@ -807,40 +808,37 @@
     margin: 0.5em 0 0 24px; }
 
 .form {
-  position: absolute;
+  position: fixed;
   top: 0;
-  background-color: white;
-  box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2); }
+  background-color: white; }
   @media screen and (min-width: 320px) and (max-width: 768px) {
     .form {
       left: 0;
       width: 100%;
       flex-direction: column; } }
-  @media screen and (min-width: 768px) and (max-width: 1366px) {
-    .form {
-      left: 0;
-      width: 320px;
-      box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
-      flex-direction: column; } }
-  @media screen and (min-width: 1366px) {
+  @media screen and (min-width: 768px) {
     .form {
       right: 0;
       width: 440px;
-      height: 676px;
+      box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
+      height: 100vh;
       flex-direction: row; } }
   .form--visible {
     display: flex;
-    z-index: 2; }
+    z-index: 3; }
   .form--hidden {
     display: none; }
-  @media screen and (min-width: 1366px) {
+  @media screen and (min-width: 768px) {
     .form__header {
       align-items: flex-start;
-      padding-top: 32px; } }
+      position: absolute;
+      left: -112px;
+      top: 32px; } }
   .form__main {
     display: flex;
-    flex-direction: column; }
-    @media screen and (min-width: 1366px) {
+    flex-direction: column;
+    border-left: 1px solid #D9FFF5; }
+    @media screen and (min-width: 768px) {
       .form__main {
         padding-top: 32px; } }
   .form__heading {
@@ -866,6 +864,19 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(./static/logo.svg); }
+
+.screen-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.65);
+  width: 100vw;
+  height: 100vh; }
+  .screen-blur--visible {
+    display: block; }
+  .screen-blur--hidden {
+    display: none; }
 
 @font-face {
   font-family: "TT Lakes";
