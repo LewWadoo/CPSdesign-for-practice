@@ -779,7 +779,7 @@
     flex-grow: 1;
     flex-direction: column; }
   .burger-menu__button-text {
-    font-family: 'TT Lakes Medium';
+    font-family: 'TT Lakes Medium', sans-serif;
     font-weight: normal;
     font-style: normal;
     font-size: 16px;
@@ -823,7 +823,7 @@
     .form {
       right: 0;
       width: 440px;
-      box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
+      box-shadow: 16px 0 52px rgba(14, 24, 80, 0.2);
       height: 100vh;
       flex-direction: row; } }
   .form--visible {
