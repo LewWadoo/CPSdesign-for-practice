@@ -24,7 +24,7 @@ $left-margin: 3 * $step;
   @media screen and (min-width: $screen-md) {
     right: 0;
     width: $step * 55;
-    box-shadow: 16px 0px 52px $color-box-shadow;
+    box-shadow: 16px 0 52px $color-box-shadow;
     height: 100vh;
     flex-direction: row;
   }

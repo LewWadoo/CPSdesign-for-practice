@@ -177,14 +177,14 @@ const showMenu = function () {
 const formFeedback = document.getElementById("form-feedback")
 const crossFormFeedback = formFeedback.querySelector(classPrefix + classButtonIconCross)
 
-crossFormFeedback.addEventListener('click', function (evt) {
+crossFormFeedback.addEventListener('click', function () {
     hideFormFeedback()
 })
 
 const formCall = document.getElementById("form-call")
 const crossFormCall = formCall.querySelector(classPrefix + classButtonIconCross)
 
-crossFormCall.addEventListener('click', function (evt) {
+crossFormCall.addEventListener('click', function () {
     hideFormCall()
 })
 
@@ -220,18 +220,18 @@ const hideFormFeedback = function () {
     hideScreenBlur()
 }
 
-screenBlur.addEventListener("mouseup", function (evt) {
+screenBlur.addEventListener("mouseup", function () {
 // hideScreenBlur()
     hideFormCall()
     hideFormFeedback()
     hideMenu()
 })
 
-burger.addEventListener('click', function (evt) {
+burger.addEventListener('click', function () {
     showMenu()
 })
 
-cross.addEventListener('click', function (evt) {
+cross.addEventListener('click', function () {
     hideMenu()
 })
 
@@ -286,7 +286,7 @@ const toggleResolution = function () {
 
 toggleResolution()
 
-window.onresize = function (event) {
+window.onresize = function () {
     clientWidthCurrent = document.body.clientWidth;
     if ((clientWidthCurrent <= resolutionMobileToPad && clientWidthPrevious > resolutionMobileToPad) || (clientWidthCurrent > resolutionMobileToPad && clientWidthPrevious <= resolutionMobileToPad)) {
         clientWidthPrevious = clientWidthCurrent
