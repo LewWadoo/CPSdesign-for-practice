@@ -1,4 +1,5 @@
 $placeholder-color: #B5B6BC;
+$color-border: #EAEAEA;
 
 $step: 8px;
 
@@ -6,4 +7,6 @@ $step: 8px;
   color: $placeholder-color;
   resize: none;
   padding: $step $step * 2;
+  border: 1px solid $color-border;
+  border-radius: $step;
 }

@@ -21,7 +21,7 @@ $headerHeight: $step * 11;
     min-height: $headerHeight;
   }
   @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
-    width: 100%;
+    //width: 100%;
     min-height: $headerHeight;
   }
   @media screen and (min-width: $screen-xl) {

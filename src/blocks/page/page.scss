@@ -4,6 +4,9 @@ $screen-xl: 1366px;
 
 $base-font: 'TT Lakes';
 
+$step: 8px;
+$width-burger-menu: $step * 40;
+
 .page {
   font-family: $base-font;
   font-weight: normal;
@@ -27,19 +30,23 @@ $base-font: 'TT Lakes';
 
     @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
       flex-direction: column;
-      //text-align: center;
       align-items: center;
     }
     @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
       flex-direction: row;
       justify-content: space-between;
-
     }
     @media screen and (min-width: $screen-xl) {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
     }
+  }
 
+  .page__main {
+
+    @media screen and (min-width: $screen-xl) {
+      margin-left: $width-burger-menu;
+    }
   }
 }

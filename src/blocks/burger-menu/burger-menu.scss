@@ -11,24 +11,23 @@ $color-border-left: #41f6d7;
 $step: 8px;
 $left-margin: 3 * $step;
 $headerHeight: $step * 11;
+$width-burger-menu: $step * 40;
 
 .burger-menu {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   flex-grow: 1;
   background-color: $header-background-color;
   z-index: 10;
+  position: fixed;
 
   @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
-    position: absolute;
     top: 0;
     left: 0;
     box-shadow: $step * 2 0px 52px $color-box-shadow;
     width: 100%;
   }
   @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
-    position: absolute;
     top: 0;
     left: 0;
     width: $step * 40;
@@ -36,8 +35,7 @@ $headerHeight: $step * 11;
     height: 100vh;
   }
   @media screen and (min-width: $screen-xl) {
-    position: static;
-    width: $step * 40;
+    width: $width-burger-menu;
     height: $step * 100;
   }
 

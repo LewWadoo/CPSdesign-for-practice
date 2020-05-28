@@ -19,11 +19,11 @@ $color-background-active: white;
   }
 
   &:focus {
-    border: 2px 2px 2px 4px solid $color-border-focus;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     outline: none;
+    border: 2px solid $color-border-focus;
   }
 
   &--active {

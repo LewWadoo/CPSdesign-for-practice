@@ -4,37 +4,35 @@ $screen-xl: 1366px;
 
 $header-background-color: white;
 $divider-background-color: #EAEAEA;
+$color-border-left: #D9FFF5;
+$color-box-shadow: rgba(14, 24, 80, 0.2);
 
 $step: 8px;
 $left-margin: 3 * $step;
 
 .form {
-  position: absolute;
+  position: fixed;
   top: 0;
   background-color: $header-background-color;
-  box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
+  //box-shadow: 16px 0px 52px $color-box-shadow;
 
   @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
     left: 0;
     width: 100%;
     flex-direction: column;
   }
-  @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
-    left: 0;
-    width: $step * 40;
-    box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2);
-    flex-direction: column;
-  }
-  @media screen and (min-width: $screen-xl) {
+  @media screen and (min-width: $screen-md) {
     right: 0;
-    width: 440px;
-    height: 676px;
+    width: $step * 55;
+    box-shadow: 16px 0px 52px $color-box-shadow;
+    height: 100vh;
     flex-direction: row;
+    //flex-direction: column;
   }
 
   &--visible {
     display: flex;
-    z-index: 2;
+    z-index: 3;
   }
 
   &--hidden {
@@ -42,16 +40,21 @@ $left-margin: 3 * $step;
   }
 
   &__header {
-    @media screen and (min-width: $screen-xl) {
+
+    @media screen and (min-width: $screen-md) {
       align-items: flex-start;
-      padding-top: $step * 4;
+      position: absolute;
+      left: -$step * 14;
+      top: 32px;
     }
   }
 
   &__main {
     display: flex;
     flex-direction: column;
-    @media screen and (min-width: $screen-xl) {
+    border-left: 1px solid $color-border-left;
+
+    @media screen and (min-width: $screen-md) {
       padding-top: $step * 4;
     }
   }
