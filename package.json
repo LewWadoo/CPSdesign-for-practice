@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "swiper": "^7.4.1"
+    "swiper": "^12.1.2"
   },
   "repository": {
     "type": "git",
